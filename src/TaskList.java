@@ -17,4 +17,7 @@ public class TaskList {
 		return myTasks;
 	}
 	
+	public static void delete(Task t) {
+		myTasks.remove(t);
+	}
 }

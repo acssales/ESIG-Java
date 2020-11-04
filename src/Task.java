@@ -1,26 +1,14 @@
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.persistence.*;
 
 @ManagedBean
-@Entity
-@Table(name = "Task")
 public class Task {
 
 	private String todo;
 	private String dueDate;
-	
-	@Id
-	@Column(name = "Task_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public long getId() {
-	    return id;
-	}
-	
+
 	public Task() {
-		
 	}
-	
+
 	public String getTodo() {
 		return todo;
 	}
@@ -43,5 +31,4 @@ public class Task {
 		}
 	}
 
-		
 }

@@ -1,3 +1,4 @@
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.persistence.*;
 
@@ -17,15 +18,18 @@ public class Task {
 	}
 	
 	public Task() {
-		TaskList.setMyTasks(this);
+		
 	}
-
+	
 	public String getTodo() {
 		return todo;
 	}
 
 	public void setTodo(String todo) {
 		this.todo = todo;
+		if (dueDate != null) {
+			TaskList.setMyTasks(this);
+		}
 	}
 
 	public String getDueDate() {
@@ -34,6 +38,9 @@ public class Task {
 
 	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
+		if (todo != null) {
+			TaskList.setMyTasks(this);
+		}
 	}
 
 		
